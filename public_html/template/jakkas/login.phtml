@@ -1,0 +1,85 @@
+<!DOCTYPE>
+<html lang="en-US">
+<head>
+	<title>Login</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="<?php echo $this->config['domain']['url'].'/'.$this->config['template']['path'].'/'.$this->config['template']['name']; ?>/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="<?php echo $this->config['domain']['url'].'/'.$this->config['template']['path'].'/'.$this->config['template']['name']; ?>/js/login.js"></script>
+	
+	<!-- basic styles -->
+
+	<link href="<?php echo $this->config['domain']['url'].'/'; ?>lib/bootstrap3.0/css/bootstrap.min.css" rel="stylesheet"> 
+	<link rel="stylesheet" href="<?php echo $this->config['domain']['url'].'/'; ?>lib/font-awesome/4.0.3/css/font-awesome.css">
+	
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="<?php echo $this->config['domain']['url'].'/'; ?>lib/font-awesome/css/font-awesome-ie7.min.css" />
+	<![endif]-->
+	
+	<!-- end basic styles -->
+	<link rel="stylesheet" id="login-css" href="<?php echo $this->config['domain']['url'].'/'.$this->config['template']['path'].'/'.$this->config['template']['name']; ?>/css/login.css" type="text/css" media="all" />
+	<meta name="robots" content="noindex,nofollow" />
+	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+</head>
+<body class="login">
+<div class='container'>
+<div id="login">
+	<h1 align="center"><a href="http://localhost/twosell" title="Powered by Pocada">Twosell Logo</a></h1>
+	<div id="login_error" style="display:none"></div> <!-- error message shows here -->
+	<form name="loginform" id="loginform" action="" method="post">
+		<p>
+			<label>Username<br />
+			<input name="user_login" id="user_login" class='input' tabindex="1" type="email" placeholder='user name' required /></label>
+		</p>
+		<p>
+			<label>Password<br />
+			<input name="user_pass" id="user_pass" class="input" value="" tabindex="2" type="password" placeholder='password' required /></label>
+		</p>
+		<p class="forgetmenot">
+			<label><input name="rememberme" id="rememberme" value="forever" tabindex="90" checked="checked" type="checkbox" /> Remember Me</label></p>
+		<p class="submit">
+<!-- 			<input name="submit" id="submit" class="btn btn-primary" value="Log In" tabindex="3" type="submit" /> -->
+			<button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+				<i class="fa fa-key"></i>
+				Login
+			</button>
+			<input name="redirect_to" value="http://localhost/twoselll/" type="hidden" />
+			<input name="testcookie" value="1" type="hidden" />
+		</p>
+		
+		<div style='clear: both;' align='center'> -------<strong>OR</strong> Login with -------</div>
+		<div class="social-login center">
+			<a class="btn btn-primary">
+				<i class="fa fa-facebook"></i>
+			</a>
+
+			<a class="btn btn-info">
+				<i class="fa fa-twitter"></i>
+			</a>
+
+			<a class="btn btn-danger">
+				<i class="fa fa-google-plus"></i>
+			</a>
+		</div>
+		<div class='toolbar'>
+			<div class='left_pass'><a href="lost-password.php" title="Password Lost and Found">Lost your password?</a></div>
+			<div class='right_register'><a href="lost-password.php" title="Password Lost and Found">Register</a></div>
+		</div>
+	</form>
+</div>
+</div>
+<p id="backtoblog"></p>
+
+<script type="text/javascript">
+function wp_attempt_focus(){
+setTimeout( function(){ try{
+d = document.getElementById('user_login');
+d.value = '';
+d.focus();
+} catch(e){}
+}, 200);
+}
+
+wp_attempt_focus();
+if(typeof wpOnload=='function')wpOnload();
+</script>
+</body></html>

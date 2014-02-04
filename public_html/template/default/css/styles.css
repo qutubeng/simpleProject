@@ -1,0 +1,18 @@
+body{
+	margin-top: 51px;
+}
+.border{ 1px solid #000; }
+/*.container{
+	width: 100%;
+}*/
+.hundred{
+	width: 100%; 
+}
+#menu-navbar-collapse-1{
+	margin-right: 20px;
+}
+.logo{
+	width: 50px;
+	height: 17px;
+}
+.navbar-brand{ margin: 0; paddding: 0; }

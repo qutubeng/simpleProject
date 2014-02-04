@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://getbootstrap.com/examples/signin/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="http://getbootstrap.com/docs-assets/ico/favicon.png">
+
+    <title>Register</title>
+
+    <!-- Bootstrap core CSS -->
+<!--     <link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet"> -->
+	<link href="<?php echo $this->config['domain']['url'].'/'; ?>lib/bootstrap3.0/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo $this->config['domain']['url'].'/'; ?>lib/font-awesome/4.0.3/css/font-awesome.css">
+	
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="<?php echo $this->config['domain']['url'].'/'; ?>lib/font-awesome/css/font-awesome-ie7.min.css" />
+	<![endif]-->
+    <!-- Custom styles for this template -->
+<!--     <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet"> -->
+	<link rel="stylesheet" href="<?php echo $this->config['domain']['url'].'/'.$this->config['template']['path'].'/'.$this->config['template']['name']; ?>/css/register.css" type="text/css" media="all" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  	<div align='center' class='flag_div'>
+  		<a href='#'><img src='<?php echo $this->config['domain']['url'].'/'.$this->config['template']['path'].'/'.$this->config['template']['name']; ?>/images/sweden_flag.gif' class='img-thumbnail flag' alt='swedish' title='Swedish' ></a><a href=''><img src='<?php echo $this->config['domain']['url'].'/'.$this->config['template']['path'].'/'.$this->config['template']['name']; ?>/images/uk_flag.gif' class='img-thumbnail flag' alt='English' title='English'></a>
+  	</div>
+	</nav>
+    <div class="container">
+      <h1 align="center">
+      	<a href="<?php echo $this->config['domain']['url']; ?>" title="Powered by 
+      		<?php echo $this->config['domain']['name']; ?>"><img class='img-responsive img-center logo' 
+      		src='<?php echo $this->config['domain']['url'].'/'.$this->config['template']['path'].'/'.$this->config['template']['name']; ?>/images/mylogo.jpg'   /></a></h1>
+	  <div id="login_error" style="display:none"></div> <!-- error message shows here -->
+	  <noscript>
+      	<div class='alert alert-warning middle_div'>
+      		<i class='fa fa-warning'></i> This website needs JavaScript to work, you must enable JavaScript in your browser. <a href='<?php echo $this->link('page/enablejavascript'); ?>'>This link will help you how to do that.</a>
+      	</div>
+      </noscript>
+      <form class="form-signin" role="form" action="<?php echo $this->link('home/index'); ?>" method="post">
+        <div class="form-group">
+	    	<label for="exampleInputEmail1">Email address</label>
+		    <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Enter email" required>
+	  	</div>
+  		<div class="form-group">
+	    	<label for="exampleInputEmail1">Password</label>
+        	<input type="password" class="form-control" id='InputPassword' name='InputPassword' placeholder="Password" required>
+        </div>
+        <div class="form-group">
+	    	<label for="exampleInputEmail1">First name</label>
+		    <input type="email" class="form-control" id="InputFname" name="InputFname" placeholder="Your first name" required>
+	  	</div>	
+	  	<div class="form-group">
+	    	<label for="exampleInputEmail1">Last name</label>
+		    <input type="email" class="form-control" id="InputLname" name="InputLname" placeholder="Your last name" required>
+	  	</div>
+	  	<div class="form-group">
+		    <input type="radio" name='gender' id='female'> Female <input type="radio" name='gender' id='male'> Male
+	  	</div>
+	  	
+        <div class="form-group">
+        	By clicking the Register me you agree to our <a href='<?php echo $this->link('page/terms'); ?>'>terms and condition</a>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name='sbtn-register' id='sbtn-register'><i class="fa fa-key"></i> Register me</button>
+        <a class="btn btn-lg btn-default btn-block" href="<?php echo $this->link('login/index'); ?>"><i class="fa fa-times-circle"></i> Cancel</a>
+        		
+      </form>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<script src="<?php echo $this->config['domain']['url'].'/'.$this->config['template']['path'].'/'.$this->config['template']['name'].'/'; ?>jquery/jquery-1.10.2.min.js"></script>
+	<script src="<?php echo $this->config['domain']['url'].'/'.$this->config['template']['path'].'/'.$this->config['template']['name'].'/'; ?>bootstrap3/js/bootstrap.min.js"></script>
+	<script src="<?php echo $this->config['domain']['url'].'/'.$this->config['template']['path'].'/'.$this->config['template']['name'].'/'; ?>js/register.js"></script>
+
+</body></html>
