@@ -63,7 +63,7 @@ class HelperClass{
 	 * url['action'] = string;
 	 * url['params] = array(1,2,3);
 	 */
-	public function urlMapper($url){
+	public function urlMapper($url, $config){
 		$url_array = array();
 		$params = array();
 		$param_count = 0;
@@ -73,7 +73,8 @@ class HelperClass{
 			$count = count($url_list);
 			if($url_list[0] != 'my-admin'){
 				$url_array['src'] = 'site';
-				if($url_list[0] == "se" || $url_list[0] == "en"){
+				$languages = $config['languages'];
+				if(in_array($url_list[0], $languages)){ //$url_list[0] == "se" || $url_list[0] == "en"){
 					$url_array['language'] = $url_list[0];
 				}else{
 					return false;

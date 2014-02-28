@@ -32,4 +32,9 @@ return array(
 				),
 		),
 		'error_reporting' => true,
+		
+		// add more language supports, follow the standard two letter format as example
+		// http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+
+		'languages' => array('en', 'sv'),
 );

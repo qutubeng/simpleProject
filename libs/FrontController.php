@@ -4,11 +4,11 @@
  * default language, controller and methods has set, if they are not provided.
  * rewrite the url if the pattern not matched // instantiate from the /index.php file only
  * @author Shamsul Alam
- * @email shamsul.alam@pocada.se
+ * @email shamsuljewel@gmail.com
  */
 class FrontController{
 	protected  $urlArray;
-	protected  $language = 'se'; // default english
+	protected  $language = 'sv'; // default english use 'en'
 	protected  $controller = 'login'; // default indexController
 	protected  $action = 'index'; // default indexAction
 	protected  $params = array();
@@ -56,7 +56,7 @@ class FrontController{
 		// check the validation of the URL
 		// a good format is: chain.admin.twosell.se/se/?login/index(optional: /1/2/3)
 		$this->helper = new HelperClass();
-		$url = $this->helper->urlMapper($url);
+		$url = $this->helper->urlMapper($url, $this->config);
 		if(!is_array($url)){
 			if($url == false)
 				header('Location: '.$this->config['domain']['url'].'/'.$this->language.'/'.$this->controller.'/'.$this->action);

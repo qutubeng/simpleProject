@@ -2,7 +2,8 @@
 session_start();
 $config = include  '../config/application.config.php';
 /*
- * Handle error reporting
+ * Handle error reporting, when the site is in live change error_reporting = false 
+ * in application.config.php file
  */
 if($config['error_reporting'] == true){
 	ini_set('display_errors',1);
@@ -25,8 +26,3 @@ include $config['path']['project']['root']."/libs/FrontController.php";
 $frontController = new FrontController($config);
 
 $content = $frontController->run();
-
-
-
-// will remove this line later
-// echo "<br />/index page content index";
