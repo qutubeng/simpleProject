@@ -1,6 +1,7 @@
 <?php
 session_start();
 $config = include  '../config/application.config.php';
+
 /*
  * Handle error reporting, when the site is in live change error_reporting = false 
  * in application.config.php file
@@ -22,7 +23,8 @@ include $config['path']['project']['root']."/libs/MainController.php";
 include $config['path']['project']['root']."/libs/MainView.php";
 
 include $config['path']['project']['root']."/libs/FrontController.php";
-
+// print_r($config);
 $frontController = new FrontController($config);
 
 $content = $frontController->run();
+// echo "index.php";

@@ -19,7 +19,6 @@ class FrontController{
 	
 	public function __construct($config){
 		$this->url = parse_url($_SERVER['REQUEST_URI']);
-		
 		$this->config = $config;
 // 		print_r($this->url);
 		/*
@@ -56,7 +55,10 @@ class FrontController{
 		// check the validation of the URL
 		// a good format is: chain.admin.twosell.se/se/?login/index(optional: /1/2/3)
 		$this->helper = new HelperClass();
+		
 		$url = $this->helper->urlMapper($url, $this->config);
+// 		echo $url;
+		
 		if(!is_array($url)){
 			if($url == false)
 				header('Location: '.$this->config['domain']['url'].'/'.$this->language.'/'.$this->controller.'/'.$this->action);
@@ -64,6 +66,8 @@ class FrontController{
 				header('Location: '.$this->config['domain']['url'].'/my-admin/'.$this->language.'/'.$this->controller.'/'.$this->action);
 			}
 		}
+// 		print_r($url);
+// 		die();
 		if(!isset($url['src'])) $url['src'] = $this->src;
 		else $this->src = $url['src'];
 		
@@ -133,7 +137,7 @@ class FrontController{
 // 		echo "file: ".$fileExists."<br />";
 // 		echo "controllerClass: ".$controllerClassExists."<br />";
 // 		echo "action: ".$actionExists."<br />";
-//		print_r($url);
+// 		print_r($this->url);
 // 		echo "Language=".$this->language."<br />Controller=".$this->controller."<br />Action: ".$this->action."<br />";
 // 		print_r($this->params);
 	}
